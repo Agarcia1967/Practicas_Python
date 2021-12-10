@@ -1,0 +1,6 @@
+Primera linea del fichero
+de texto con varias lineas
+de ejemplo para el test 
+del ejercicio parte segunda.
+
+A ver si funciona.
