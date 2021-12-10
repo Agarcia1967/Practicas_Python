@@ -18,16 +18,11 @@ def toStr(n:int,base:int):
     else:
         return toStr(n//base,base) + convertString[n%base]
 
-
-# Esta funcion OBLIGA a que el valor sea positivo, sino sigue preguntando
-def getPositivo(texto:str):
-    entrada:int=-1
-    while (entrada<0):
-        entrada=int(input(texto))
-    return entrada
+# Usamos la funcion que hemos escrito anteriormente 
+from getPositivo import getIntPositivo
 
 
-numero=getPositivo("Dame un numero entero positivo:")
+numero=getIntPositivo("Dame un numero entero positivo:")
 print("El ",numero," en base 16 es:",toStr(numero,16))
 print("El ",numero," en base 10 es:",toStr(numero,10))
 print("El ",numero," en base  8 es:",toStr(numero,8))

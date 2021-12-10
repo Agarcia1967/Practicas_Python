@@ -16,19 +16,13 @@ def f_a(k:int,b:int,c:int,d:int):
     else:
         return c*f_a(k-1,b,c,d)+d
 
-
-# Esta funcion OBLIGA a que el valor sea positivo, sino sigue preguntando
-def getPositivo(texto:str):
-    entrada:int=-1
-    while (entrada<0):
-        entrada=int(input(texto))
-    return entrada
-
+# Usamos la funcion que hemos escrito anteriormente 
+from getPositivo import getIntPositivo
 
 print("Introduzca los valores POSITVOS ;")
-b=getPositivo("Introduzca valor de b:")
-c=getPositivo("Introduzca valor de c:")
-d=getPositivo("Introduzca valor de d:")
-k=getPositivo("Introduzca elemento de la serie a calcular(k):")
+b=getIntPositivo("Introduzca valor de b:")
+c=getIntPositivo("Introduzca valor de c:")
+d=getIntPositivo("Introduzca valor de d:")
+k=getIntPositivo("Introduzca elemento de la serie a calcular(k):")
 a:int=f_a(k,b,c,d)
 print(F"a[{k}]={a}")

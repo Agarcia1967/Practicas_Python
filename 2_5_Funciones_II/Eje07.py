@@ -22,16 +22,10 @@ def cuadrado(ch:str,n:int):
 # 2. Utilizando la función definida anteriormente, escribe un programa que solicite por 
 # teclado un número entero positivo y un carácter y muestre en pantalla un cuadrado 
 # relleno en la forma ya indicada.
-
-# Esta funcion OBLIGA a que el valor sea positivo, sino sigue preguntando
-def getPositivo(texto:str):
-    entrada:int=-1
-    while (entrada<0):
-        entrada=int(input(texto))
-    return entrada
-
+#
+from getPositivo import getIntPositivo
 
 ch=input("Introduce un caracter:")
-n=getPositivo("Introduce el numero de filas:")
+n=getIntPositivo("Introduce el numero de filas:")
 print(cuadrado(ch,n))
 

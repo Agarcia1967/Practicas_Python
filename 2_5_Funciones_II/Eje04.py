@@ -19,9 +19,9 @@ def primo(numero:int):
     # El cero y el uno NO son primos
     primo:bool
     if (numero<2):
-        primo=False
-    else:
-        primo=True
+        return False
+    # Empezamos suponiendo que es primo
+    primo=True
     for idx in range (2,numero):
         primo = primo and not(divisible(numero, idx))
         # Este if lo que hace es cuando encuentra un divisor sale del bucle

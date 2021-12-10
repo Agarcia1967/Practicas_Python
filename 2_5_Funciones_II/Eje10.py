@@ -12,16 +12,10 @@ def fiobonacci(n:int):
     else:
         return fiobonacci(n-1) + fiobonacci(n-2)
 
+# Usamos la funcion que hemos escrito anteriormente 
+from getPositivo import getIntPositivo
 
-# Esta funcion OBLIGA a que el valor sea positivo, sino sigue preguntando
-def getPositivo(texto:str):
-    entrada:int=-1
-    while (entrada<0):
-        entrada=int(input(texto))
-    return entrada
-
-
-n=getPositivo("Introduce un numero para calcular la suma de los terminos de Fiobonacci:")
+n=getIntPositivo("Introduce un numero para calcular la suma de los terminos de Fiobonacci:")
 suma:int=0
 for idx in range(0,n+1):
     f=fiobonacci(idx)

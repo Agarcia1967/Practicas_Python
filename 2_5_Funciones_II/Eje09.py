@@ -25,15 +25,10 @@ def fio2(n:int):
     else: 
         fio2(n-1) + fio2(n-2)
 
-
-# Esta funcion OBLIGA a que el valor sea positivo, sino sigue preguntando
-def getPositivo(texto:str):
-    entrada:int=-1
-    while (entrada<0):
-        entrada=int(input(texto))
-    return entrada
+# Usamos la funcion que hemos escrito anteriormente 
+from getPositivo import getIntPositivo
 
 
-n=getPositivo("Introduce un numero para calcular Fiobonacci:")
+n=getIntPositivo("Introduce un numero para calcular Fiobonacci:")
 f=fiobonacci(n)
 print(f"fiobonacci({n})={f}")
