@@ -8,7 +8,7 @@
 
 mialtura=168
 
-n=int(input("¿Cuantos jugadores hay?"))
+n=int(input("¿Cuantos jugadores hay?:"))
 
 estimaciones=[]
 for idx in range(n):
