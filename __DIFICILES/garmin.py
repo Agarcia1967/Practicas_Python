@@ -1,4 +1,5 @@
 # Ejercicio
+# https://es.wikiloc.com/rutas-mountain-bike/101-peregrinos-2019-35798838
 # Dado un fichero CSV sin cabeceras, que contiene las coordenadas GPS x,y,z ademas de una marca de tiempo 
 # se pide:
 #    Leer el fichero
@@ -13,9 +14,10 @@
 
 
 from datetime import datetime
-from puntoGPS import puntoGPS, haversine
-from funcaux import datetime_to_float
+from puntoGPS import puntoGPS
+# from funcaux import datetime_to_float
 from repositorio import *
+from servicios import *
 
 
 
@@ -48,6 +50,7 @@ def test_createGPS():
     assert (1==1)
 
 puntos=cargaFichero('101.csv')
+puntos=procesaPuntos(puntos)
 
 desde=float(input("Desde punto km:"))
 hasta=float(input("Hasta punto km:"))
