@@ -18,6 +18,7 @@ from puntoGPS import puntoGPS
 # from funcaux import datetime_to_float
 from repositorio import *
 from servicios import *
+from puntoAgregado import *
 
 
 
@@ -51,6 +52,11 @@ def test_createGPS():
 
 puntos=cargaFichero('101.csv')
 puntos=procesaPuntos(puntos)
+
+repo=RepositorioAgregado()
+repo.fromPtos(puntos)
+
+print ("%s" %(repo.toStr()))
 
 desde=float(input("Desde punto km:"))
 hasta=float(input("Hasta punto km:"))
