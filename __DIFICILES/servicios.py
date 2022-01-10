@@ -21,7 +21,19 @@ def procesaPuntos(puntos:list)->list:
             puntos[idxpto].accBajada = puntos[idxpto-1].accBajada 
         else:
             puntos[idxpto].accBajada = puntos[idxpto-1].accBajada - puntos[idxpto].incAltura
-            puntos[idxpto].accSubida = puntos[idxpto-1].accSubida 
+            puntos[idxpto].accSubida = puntos[idxpto-1].accSubida
+            
+        if (puntos[idxpto].distancia>0):
+            puntos[idxpto].tpcvar = puntos[idxpto].incAltura / puntos[idxpto].distancia * 100
         
-         # print("%5d: %s" %(idxpto+1,puntos[idxpto].toStr()))
+        print("%5d: %s" %(idxpto+1,puntos[idxpto].toStr()))
     return puntos
+
+    def calcula_porcentajes(ptos:list)->list:
+        tabla: list = []
+        return tabla
+    # calcula tendencias y cortes
+    # Vamos a procesar los puntos para calcular los cambios de tendencia ascenso/descenso
+    # Haremos los cortes cuando cambie la tendencia
+    def calcula_cortes(puntos:list)->list:
+        return 

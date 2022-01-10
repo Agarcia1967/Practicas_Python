@@ -22,6 +22,7 @@ class puntoGPS():
     accDist : float = 0 # acumulado distancia desde origen
     accSubida : float = 0 # acumulado de subida
     accBajada : float = 0 # acumulado de bajada
+    tpcvar : float = 0 # tanto por ciento de variacion respecto al punto anterior
     dt : datetime 
     incDt: float =1 # Diferencial de segundos
     accDt: float =0 # Acumulado de tiempo
@@ -41,8 +42,8 @@ class puntoGPS():
         self.dt = datetime.strptime(time.strip(),'%Y-%m-%dT%H:%M:%SZ')
 
     def toStr(self)->str:
-        return("lt=%8.5f ln=%8.5f h=%5.1f d=%6.2f dh=%4.1f aDt=%8.1f ahs=%5.1f ahb=%5.1f h=%s (%2.0f)" 
-        %(self.lat,self.lon,self.altura,self.distancia,self.incAltura,self.accDist,self.accSubida,self.accBajada,hms(self.accDt),self.incDt))
+        return("(%8.5f,%8.5f,%6.1f,d=%6.2f h=%4.1f) aDt=%8.1f ahs=%5.1f ahb=%5.1f h=%s (%2.0f) pc=%4.1f" 
+        %(self.lat,self.lon,self.altura,self.distancia,self.incAltura,self.accDist,self.accSubida,self.accBajada,hms(self.accDt),self.incDt,self.tpcvar))
 
 def haversine(p1: puntoGPS, p2: puntoGPS)->float:
     """
