@@ -27,7 +27,7 @@ def procesaPuntos(puntos:List[puntoGPS])->List[puntoGPS]:
         if (puntos[idxpto].distancia>0):
             puntos[idxpto].tpcvar = puntos[idxpto].incAltura / puntos[idxpto].distancia * 100
         
-        print("%5d: %s" %(idxpto+1,puntos[idxpto].toStr()))
+        print("%5d: %s" %(idxpto+1,puntos[idxpto].toStr()) )
     return puntos
 
     def calcula_porcentajes(ptos:List[puntoGPS])->List[puntoGPS]:

@@ -20,9 +20,12 @@ class puntoAgregado():
         self.min = min
         self.max = max
 
-    def toStr(self)->str:
+    def __str__(self)->str:
         return("[%7.2f,%7.2f] d=%8.2f ahs=%6.1f ahb=%6.1f h=%s" 
         %(self.min,self.max,self.accDist,self.accSubida,self.accBajada,hms(self.accDt)))
+
+    def toStr(self)->str:
+        return self.__str__()
 
 class RepositorioAgregado():
     """Representa un repositorio de agregados"""
@@ -74,8 +77,12 @@ class RepositorioAgregado():
             self.add(p.tpcvar,p.incAltura,p.distancia,p.incDt)
         return
 
-    def toStr(self)->str:
+    def __str__(self)->str:
         result = ''
         for p in self.repo:
             result += '\n' + p.toStr()
         return result
+        
+
+    def toStr(self)->str:
+        return self.__str__()
