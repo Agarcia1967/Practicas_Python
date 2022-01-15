@@ -1,5 +1,7 @@
 from funcaux import hms
 from array import *
+from typing import List
+from puntoGPS import puntoGPS
 
 class puntoAgregado():
     """Representa un punto de AGREGADO POR PENDIENTE"""
@@ -24,7 +26,7 @@ class puntoAgregado():
 
 class RepositorioAgregado():
     """Representa un repositorio de agregados"""
-    repo = []
+    repo : List[puntoAgregado] = []
 
     def __init__(self):
         # print("Creando rangos")
@@ -67,7 +69,7 @@ class RepositorioAgregado():
                 return
         # print("Algo va mal")
 
-    def fromPtos(self, ptos:list):
+    def fromPtos(self, ptos:List[puntoGPS]):
         for p in ptos:
             self.add(p.tpcvar,p.incAltura,p.distancia,p.incDt)
         return

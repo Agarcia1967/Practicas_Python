@@ -1,6 +1,7 @@
 from funcaux import hms
 from datetime import datetime
 from puntoGPS import puntoGPS
+from typing import List
 
 class puntoCorte( ):
     """Representa un punto de corte sobre la serie de puntos"""
@@ -23,10 +24,10 @@ class puntoCorte( ):
         self.accBajada = b
         self.accDt = t
 
-    @staticmethod
-    def calcula_Corte(puntos:list)->list:
-        lista = []
-        return lista
+    # @staticmethod
+    # def calcula_Corte(puntos:List[puntoGPS])->List[puntoCorte]:
+    #    lista = []
+    #    return lista
 
     def toStr(self)->str:
         return("(%4d,%4d) distancia=%4.1f Sube=%8.1f Baja=%5.1f t=%dsg" 

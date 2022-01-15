@@ -1,7 +1,8 @@
 from puntoGPS import puntoGPS
+from typing import List
 
 # Devuelve una lista de puntoGPS
-def cargaFichero(fichero:str)->list:
+def cargaFichero(fichero:str)->List[puntoGPS]:
     """
     carga un fichero de puntos definido en fichero
     Devuelve una lista de puntoGPS

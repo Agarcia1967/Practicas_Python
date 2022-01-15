@@ -1,9 +1,10 @@
 
 from funcaux import datetime_to_float
 from puntoGPS import puntoGPS, haversine
+from typing import List
 
 # Procesa el array de puntos para calcular los datos agregados
-def procesaPuntos(puntos:list)->list:
+def procesaPuntos(puntos:List[puntoGPS])->List[puntoGPS]:
     """
     Procesa una lista de puntos calculando toods los valores de la clase PuntoGPS apartir de lat, lon, altura y hora
     """
@@ -29,7 +30,7 @@ def procesaPuntos(puntos:list)->list:
         print("%5d: %s" %(idxpto+1,puntos[idxpto].toStr()))
     return puntos
 
-    def calcula_porcentajes(ptos:list)->list:
+    def calcula_porcentajes(ptos:List[puntoGPS])->List[puntoGPS]:
         tabla: list = []
         return tabla
     # calcula tendencias y cortes
