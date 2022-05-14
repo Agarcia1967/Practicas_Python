@@ -33,25 +33,29 @@ class RepositorioAgregado():
 
     def __init__(self):
         # print("Creando rangos")
-        self.create(-100,-50)
-        self.create(-50,-40)
-        self.create(-40,-30)
-        self.create(-30,-20)
-        self.create(-20,-10)        
-        self.create(-10,-5)        
-        self.create(-5,0)
-        self.create(0,2)
-        self.create(2,6)
-        self.create(6,10)
-        self.create(10,15)
-        self.create(15,20)        
-        self.create(20,25)
-        self.create(25,30)
-        self.create(30,40)        
-        self.create(40,100)
+        self.createRango(-30,-100)
+        self.createRango(-15,-30)
+        self.createRango(-10,-15)
+        self.createRango(-5,-10)        
+        self.createRango(-5,-1)
+        self.createRango(-1,1)
+        self.createRango(1,5)
+        self.createRango(5,10)
+        self.createRango(10,15)
+        self.createRango(15,30)
+        self.createRango(30,100)
+        # self.createRango(15,20)        
+        # self.createRango(20,25)
+        # self.createRango(25,30)
+        # self.createRango(30,40)        
+        # self.createRango(40,100)
         return
 
-    def create(self,min: float, max:float):
+    def createRango(self,min: float, max:float):
+        if (min>max):
+            tmp=min
+            min=max
+            max=tmp
         self.repo.append( puntoAgregado(min,max) )
 
     def add(self,pdte: float,altura:float, distancia: float, segundos: float):

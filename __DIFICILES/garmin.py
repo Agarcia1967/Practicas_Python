@@ -50,7 +50,13 @@ from puntoAgregado import *
 def test_createGPS():
     assert (1==1)
 
-puntos=cargaFichero('101.csv')
+# puntos=cargaFicheroXML('101-peregrinos-2022-aga.gpx')
+
+puntos=cargaFicheroXML('ruta-vetona-btt-2022-oficial.gpx')
+
+
+
+# puntos=cargaFichero('101.csv')
 puntos=procesaPuntos(puntos)
 
 repo=RepositorioAgregado()

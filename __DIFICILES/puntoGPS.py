@@ -42,6 +42,9 @@ class puntoGPS():
         self.dt = datetime.strptime(time.strip(),'%Y-%m-%dT%H:%M:%SZ')
 
     def toStr(self)->str:
+        return self.__str__()
+        
+    def __str__(self)->str:
         return("(%8.5f,%8.5f,%6.1f,d=%6.2f h=%4.1f) aDt=%8.1f ahs=%5.1f ahb=%5.1f h=%s (%2.0f) pc=%4.1f" 
         %(self.lat,self.lon,self.altura,self.distancia,self.incAltura,self.accDist,self.accSubida,self.accBajada,hms(self.accDt),self.incDt,self.tpcvar))
 
