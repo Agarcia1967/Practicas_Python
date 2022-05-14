@@ -9,6 +9,8 @@ def procesaPuntos(puntos:List[puntoGPS])->List[puntoGPS]:
     Procesa una lista de puntos calculando todos los valores de la clase PuntoGPS apartir de lat, lon, altura y hora
     Se hace una REDUCCION de aquellos puntos que esten a menos de 30 metros
     """
+    if (len(puntos)<1 ):
+         return puntos
     TmpPuntos = []
     TmpPuntos.append(puntos[0])
     for idxpto in range(1,len(puntos)): # len(puntos)
